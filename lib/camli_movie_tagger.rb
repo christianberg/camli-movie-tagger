@@ -2,8 +2,8 @@ require 'json'
 require 'themoviedb'
 
 class CamliMovieTagger
-  def initialize
-    Tmdb::Api.key('<insert api key here>')
+  def initialize(tmdb_api_key)
+    Tmdb::Api.key(tmdb_api_key)
   end
 
   def permanode_attributes_for(sha)

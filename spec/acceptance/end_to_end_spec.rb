@@ -107,7 +107,7 @@ RSpec.describe 'CamliMovieTagger' do
       sha2 = upload_test_file('Avengers.mp4')
       set_attribute(sha2, 'tmdb_id', '24428')
       # When: Run the tagger on the uploaded sha
-      tagger = CamliMovieTagger.new
+      tagger = CamliMovieTagger.new(ENV['TMDB_API_KEY'])
       tagger.run([sha1])
       tagger.run([sha2])
 
